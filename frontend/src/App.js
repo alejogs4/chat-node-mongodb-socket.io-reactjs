@@ -15,9 +15,7 @@ class App extends Component {
   componentDidMount() {
     const socket = socketIOClient(this.state.host)
     socket.on('print message', message => {
-      const newMessages = this.state.messages
-      newMessages.unshift(message)
-      this.setState({ messages: newMessages })
+      this.setState(prevState =>({ messages: [ message, ...prevState.messages ] }))
     })
   }
 

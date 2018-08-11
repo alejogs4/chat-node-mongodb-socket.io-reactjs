@@ -13,4 +13,11 @@ route.get('/messages', (req, res) => {
   })
 })
 
+route.delete('/messages', TODO)
+
+
+function TODO(req, res) {
+  console.log('Todo this route')
+}
+
 module.exports = route
